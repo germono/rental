@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: oliv.exo.rental.core;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: lib/rental.jar,
+ .
+Bundle-Activator: oliv.exo.rebtal.core.RentalCoreActivator
+Export-Package: com.opcoach.training.rental,
+ com.opcoach.training.rental.core.helpers
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: oliv.exo.rebtal.core
+Bundle-ActivationPolicy: lazy
