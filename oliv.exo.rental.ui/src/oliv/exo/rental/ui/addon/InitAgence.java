@@ -1,9 +1,16 @@
  
 package oliv.exo.rental.ui.addon;
 
+import java.util.Arrays;
+
 import javax.annotation.PostConstruct;
+import javax.swing.event.ListSelectionEvent;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
@@ -34,6 +41,16 @@ public class InitAgence  implements RentalUIConstantes{
 		    courante.addCustomer(c1);
 		}
 		context.set(AGENCE_COURANTE, courante);
+		context.set(RENTAL_UI_IMG_REGISTRE, getLocalImageRegistry());
+	}
+	
+	ImageRegistry getLocalImageRegistry() {
+		Bundle b = FrameworkUtil.getBundle(getClass());
+		ImageRegistry reg=new ImageRegistry();
+		for(String img : Arrays.asList(IMG_AGENCY,IMG_CUSTO,IMG_RENTAL,IMG_RENTAL_OBJET,IMG_SAMPLE))
+			reg.put(img, ImageDescriptor.createFromURL(b.getEntry(img)));
+//		System.out.println("bob");
+		return reg;
 	}
 
 }
