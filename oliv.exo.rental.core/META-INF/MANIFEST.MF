@@ -7,9 +7,10 @@ Bundle-ClassPath: lib/rental.jar,
  .
 Bundle-Activator: oliv.exo.rebtal.core.RentalCoreActivator
 Export-Package: com.opcoach.training.rental,
- com.opcoach.training.rental.core.helpers
+ com.opcoach.training.rental.core.helpers,
+ oliv.exo.rebtal.core
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: oliv.exo.rebtal.core
 Bundle-ActivationPolicy: lazy

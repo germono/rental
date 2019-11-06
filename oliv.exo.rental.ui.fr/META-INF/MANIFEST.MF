@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fr
+Bundle-SymbolicName: oliv.exo.rental.ui.fr
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: oliv.exo.rental.ui;bundle-version="1.0.0"
+Automatic-Module-Name: oliv.exo.rental.ui.fr
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Localization: OSGI-INF/l10n/bundle

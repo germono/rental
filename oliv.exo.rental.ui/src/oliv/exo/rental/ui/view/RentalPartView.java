@@ -2,6 +2,7 @@ package oliv.exo.rental.ui.view;
 
 
 import javax.annotation.PostConstruct;
+
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
@@ -9,7 +10,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
+import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
+
+import oliv.exo.rebtal.core.RentalCoreActivator;
 
 public class RentalPartView {
 	
@@ -24,10 +28,11 @@ public class RentalPartView {
 		
 		rentedObjectLabel = new Label(infogroupe,SWT.NONE);
 		rentedObjectLabel.setText("Salut");
+		setRental(RentalCoreActivator.getAgence().getRentals().get(0));
 	}
 	
-	public void setRental(RentalAgency agence) {
-		rentedObjectLabel.setText(agence.getName());
+	public void setRental(Rental agence) {
+		rentedObjectLabel.setText("Loué à : "+agence.getCustomer().getFirstName());
 	}
 	
 	@Focus
