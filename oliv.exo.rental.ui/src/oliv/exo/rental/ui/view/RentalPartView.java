@@ -2,30 +2,32 @@ package oliv.exo.rental.ui.view;
 
 
 import javax.annotation.PostConstruct;
+import javax.inject.Named;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-
-import com.opcoach.training.rental.Rental;
-
-import oliv.exo.rebtal.core.RentalCoreActivator;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Spinner;
-import org.eclipse.swt.widgets.DateTime;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.Scale;
 import org.eclipse.swt.widgets.Slider;
-import org.eclipse.swt.widgets.Link;
+import org.eclipse.swt.widgets.Spinner;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Text;
 
-public class RentalPartView {
+import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
+
+import oliv.exo.rental.ui.RentalUIConstantes;
+
+public class RentalPartView implements RentalUIConstantes{
 	
 
 	private Label lblObjet;
@@ -34,11 +36,11 @@ public class RentalPartView {
 	private Label lblDatefin;
 	private Label lblPrenom;
 	private Group group;
-	private Text text;
+	private Text text;	
 	private Table table;
 
 	@PostConstruct
-	public void creationView(Composite parent) {
+	public void creationView(Composite parent, @Named(AGENCE_COURANTE) RentalAgency agence) {
 		parent.setLayout(new GridLayout(1, false));
 		Group infogroupe= new Group(parent,SWT.NONE);
 		infogroupe.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -132,12 +134,10 @@ public class RentalPartView {
 		
 		Link link = new Link(group, SWT.NONE);
 		link.setText("<a>New Link</a>");
-		new Label(group, SWT.NONE);
-		new Label(group, SWT.NONE);
-		new Label(group, SWT.NONE);
-		setRental(RentalCoreActivator.getAgence().getRentals().get(0));
+		setRental(agence.getRentals().get(0));
 	}
 	
+	 
 	public void setRental(Rental agence) {
 		lblNom.setText(agence.getCustomer().getFirstName());
 		lblPrenom.setText(agence.getCustomer().getLastName());
