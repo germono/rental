@@ -5,6 +5,10 @@
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
     </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree">
+      <tags>View</tags>
+      <tags>categoryTag:Debug</tags>
+    </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_F5iCsACGEeqWRsLJ-NB0Ug" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_HeU2QACGEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.addon.0" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.addon.InitAgence"/>
