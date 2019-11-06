@@ -29,7 +29,7 @@ public class RentalProvider2 extends LabelProvider implements ILazyTreeContentPr
 	@Override
 	public void updateElement(Object parent, int index) {
 		if(parent instanceof RentalAgency) {
-			((RentalAgency) parent).getCustomers().get(0);
+			((RentalAgency) parent).getCustomers().get(index);
 			
 		}
 	}
