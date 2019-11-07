@@ -43,7 +43,6 @@
           <children xsi:type="basic_1:PartStack" xmi:id="_iEdy4AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partstack.0" containerData="2">
             <children xsi:type="advanced:Placeholder" xmi:id="_vGMj0AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partdescriptor.treeview"/>
           </children>
-          <children xsi:type="advanced:Placeholder" xmi:id="_bgbzQAFCEeqYMofHjJyXVQ" elementId="org.eclipse.ui.views.ResourceNavigator" containerData="1"/>
         </children>
         <children xsi:type="advanced:Placeholder" xmi:id="_tySr8AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partdescriptor.resume" containerData="1"/>
       </children>
