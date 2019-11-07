@@ -4,7 +4,6 @@ package oliv.exo.rental.ui.addon;
 import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
-import javax.swing.event.ListSelectionEvent;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -43,6 +42,7 @@ public class InitAgence  implements RentalUIConstantes{
 		context.set(AGENCE_COURANTE, courante);
 		context.set(RENTAL_UI_IMG_REGISTRE, getLocalImageRegistry());
 	}
+	
 	
 	ImageRegistry getLocalImageRegistry() {
 		Bundle b = FrameworkUtil.getBundle(getClass());
