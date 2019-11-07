@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_7XSBoP_lEemtV83_uRmUUg">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_7XSBoP_lEemtV83_uRmUUg">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_959ZwP_lEemtV83_uRmUUg" featurename="descriptors" parentElementId="xpath:/">
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_B9PpAP_mEemtV83_uRmUUg" elementId="oliv.exo.rental.ui.partdescriptor.resume" label="%SuperPart" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalPartView">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_B9PpAP_mEemtV83_uRmUUg" elementId="oliv.exo.rental.ui.partdescriptor.resume" label="%SuperPart" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Customers.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalPartView">
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
     </elements>
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree">
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_F5iCsACGEeqWRsLJ-NB0Ug" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_HeU2QACGEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.addon.0" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.addon.InitAgence"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_SwDNoAFAEeqYMofHjJyXVQ" featurename="snippets" parentElementId="xpath:/">
+    <elements xsi:type="advanced:Perspective" xmi:id="_WPESMAFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.perspective" label="Rental" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png">
+      <children xsi:type="basic_1:PartSashContainer" xmi:id="_g3Px0AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partsashcontainer.0" selectedElement="_dzSmsAFCEeqYMofHjJyXVQ" horizontal="true">
+        <children xsi:type="basic_1:PartSashContainer" xmi:id="_dzSmsAFCEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partsashcontainer.1" containerData="2" selectedElement="_iEdy4AFAEeqYMofHjJyXVQ">
+          <children xsi:type="basic_1:PartStack" xmi:id="_iEdy4AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partstack.0" containerData="2">
+            <children xsi:type="advanced:Placeholder" xmi:id="_vGMj0AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partdescriptor.treeview"/>
+          </children>
+          <children xsi:type="advanced:Placeholder" xmi:id="_bgbzQAFCEeqYMofHjJyXVQ" elementId="org.eclipse.ui.views.ResourceNavigator" containerData="1"/>
+        </children>
+        <children xsi:type="advanced:Placeholder" xmi:id="_tySr8AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partdescriptor.resume" containerData="1"/>
+      </children>
+    </elements>
   </fragments>
 </fragment:ModelFragments>
