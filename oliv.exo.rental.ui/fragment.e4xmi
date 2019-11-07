@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_7XSBoP_lEemtV83_uRmUUg">
+  <imports xsi:type="commands:Command" xmi:id="_DoqfUAFiEeqYMofHjJyXVQ" elementId="org.eclipse.ui.edit.copy"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_959ZwP_lEemtV83_uRmUUg" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_B9PpAP_mEemtV83_uRmUUg" elementId="oliv.exo.rental.ui.partdescriptor.resume" label="%SuperPart" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Customers.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalPartView">
       <tags>View</tags>
@@ -24,6 +25,9 @@
       <menus xmi:id="_EUnWcAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menu.0">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_E3ahgAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.dfgdsg" label="dfgdsg" command="_n89rwAFKEeqYMofHjJyXVQ"/>
       </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_KaE7AAFdEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.popupmenu.memupopuparbre" label="MemuPopupArbre">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_QNoOAAFdEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.copy" label="Copy" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Customers.png" command="_DoqfUAFiEeqYMofHjJyXVQ"/>
+      </menus>
       <toolbar xmi:id="_P41AgAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.toolbar.0">
         <children xsi:type="menu:HandledToolItem" xmi:id="_Ql_ogAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
       </toolbar>
@@ -32,8 +36,8 @@
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_F5iCsACGEeqWRsLJ-NB0Ug" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_HeU2QACGEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.addon.0" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.addon.InitAgence"/>
   </fragments>
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_SwDNoAFAEeqYMofHjJyXVQ" featurename="snippets" parentElementId="xpath:/">
-    <elements xsi:type="advanced:Perspective" xmi:id="_WPESMAFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.perspective" label="Rental" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_SwDNoAFAEeqYMofHjJyXVQ" featurename="snippets" parentElementId="xpath:/" positionInList="first">
+    <elements xsi:type="advanced:Perspective" xmi:id="_WPESMAFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.perspective" selectedElement="_g3Px0AFAEeqYMofHjJyXVQ" label="Rental" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png">
       <children xsi:type="basic_1:PartSashContainer" xmi:id="_g3Px0AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partsashcontainer.0" selectedElement="_dzSmsAFCEeqYMofHjJyXVQ" horizontal="true">
         <children xsi:type="basic_1:PartSashContainer" xmi:id="_dzSmsAFCEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partsashcontainer.1" containerData="2" selectedElement="_iEdy4AFAEeqYMofHjJyXVQ">
           <children xsi:type="basic_1:PartStack" xmi:id="_iEdy4AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partstack.0" containerData="2">
@@ -47,6 +51,7 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_g4-roAFKEeqYMofHjJyXVQ" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_imQFwAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.ouvrirBonjour" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.handler.DialgBonjour" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+    <elements xsi:type="commands:Handler" xmi:id="_DTF_UAFfEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handler.copy" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.handler.CopyHandlerEtImperativeExpression" command="_DoqfUAFiEeqYMofHjJyXVQ"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_mfzxQAFKEeqYMofHjJyXVQ" featurename="commands" parentElementId="xpath:/">
     <elements xsi:type="commands:Command" xmi:id="_n89rwAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.command.ouvrirdialog" commandName="OuvrirDialog" description="Ouvre une super fenetre"/>

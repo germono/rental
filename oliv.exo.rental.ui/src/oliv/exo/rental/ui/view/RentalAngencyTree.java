@@ -8,6 +8,7 @@ import javax.net.ssl.ExtendedSSLSession;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -23,8 +24,10 @@ import oliv.exo.rental.ui.RentalUIConstantes;
 public class RentalAngencyTree implements RentalUIConstantes{
 
 	@PostConstruct
-	public void initArbre(Composite parent, @Named(AGENCE_COURANTE) RentalAgency agence,IEclipseContext context,ESelectionService selectionService) {
+	public void initArbre(Composite parent, @Named(AGENCE_COURANTE) RentalAgency agence,IEclipseContext context,
+			ESelectionService selectionService,EMenuService menuService) {
 		TreeViewer tv  = new TreeViewer(parent);
+		menuService.registerContextMenu(tv.getControl(), "oliv.exo.rental.ui.popupmenu.memupopuparbre");
 		RentalProvider rp=ContextInjectionFactory.make(RentalProvider.class,context);
 		tv.setContentProvider(rp);
 		tv.setLabelProvider(rp);

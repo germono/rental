@@ -1,0 +1,16 @@
+package oliv.exo.rental.ui.handler;
+
+import javax.inject.Named;
+
+import org.eclipse.e4.core.di.annotations.Evaluate;
+import org.eclipse.e4.ui.services.IServiceConstants;
+
+import com.opcoach.training.rental.Customer;
+
+public class IE {
+	@Evaluate
+	public boolean estVisible(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection) {
+		return selection instanceof Customer;
+	}
+
+}
