@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_7XSBoP_lEemtV83_uRmUUg">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_7XSBoP_lEemtV83_uRmUUg">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_959ZwP_lEemtV83_uRmUUg" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_B9PpAP_mEemtV83_uRmUUg" elementId="oliv.exo.rental.ui.partdescriptor.resume" label="%SuperPart" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Customers.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalPartView">
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_GOWxMAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.popupmenu.popdessus" label="PopDessus">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_I9dbwAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.popdessushd" label="PopDessusHd" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/RentalObjects.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_Mdl6oAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.popupmenu.popdessous" label="PopDessous">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_OMnBMAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.popdessoushd" label="PopDessousHd" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </menus>
+      <toolbar xmi:id="_ZvdHYAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.toolbar.1">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_aQQuYAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledtoolitem.dsfqf" label="dsfqf" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </toolbar>
     </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree">
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
+      <menus xmi:id="_1DVsIAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menu.menudeview" label="Menu de view">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2VIEIAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.clic" label="Clic " iconURI="platform:/plugin/oliv.exo.rental.ui/icons/sample.gif" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </menus>
+      <menus xmi:id="_EUnWcAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menu.0">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_E3ahgAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.dfgdsg" label="dfgdsg" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </menus>
+      <toolbar xmi:id="_P41AgAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Ql_ogAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+      </toolbar>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_F5iCsACGEeqWRsLJ-NB0Ug" featurename="addons" parentElementId="xpath:/">
@@ -24,6 +43,26 @@
         </children>
         <children xsi:type="advanced:Placeholder" xmi:id="_tySr8AFAEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.partdescriptor.resume" containerData="1"/>
       </children>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_g4-roAFKEeqYMofHjJyXVQ" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_imQFwAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.ouvrirBonjour" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.handler.DialgBonjour" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_mfzxQAFKEeqYMofHjJyXVQ" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_n89rwAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.command.ouvrirdialog" commandName="OuvrirDialog" description="Ouvre une super fenetre"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_F5qwEAFLEeqYMofHjJyXVQ" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_L9svEAFLEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_mqMm4AFLEeqYMofHjJyXVQ" elementId="id.clicici" label="Clic Ici" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_0Zx8UAFLEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menucontribution.1" positionInParent="after=additions" parentId="file">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_2ECesAFLEeqYMofHjJyXVQ" elementId="id.clicici" label="Clic La" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_eWbkcAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menucontribution.2" positionInParent="after=save" parentId="file">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_bgQokAFMEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledmenuitem.apressave" label="ApresSave" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Agency.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_MDb4wAFNEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menucontribution.3" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_O01CUAFNEeqYMofHjJyXVQ" elementId="id.partout" label="Partout" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Customers.png" command="_n89rwAFKEeqYMofHjJyXVQ"/>
     </elements>
   </fragments>
 </fragment:ModelFragments>

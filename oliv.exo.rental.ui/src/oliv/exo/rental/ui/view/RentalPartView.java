@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -36,12 +37,13 @@ public class RentalPartView implements RentalUIConstantes {
 	private Table table;
 
 	@PostConstruct
-	public void creationView(Composite parent, @Named(AGENCE_COURANTE) RentalAgency agence) {
+	public void creationView(Composite parent, @Named(AGENCE_COURANTE) RentalAgency agence,EMenuService menuService) {
 		parent.setLayout(new GridLayout(1, false));
 		Group infogroupe = new Group(parent, SWT.NONE);
 		infogroupe.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		infogroupe.setText("Information");
 		infogroupe.setLayout(new GridLayout(3, false));
+		menuService.registerContextMenu(infogroupe, "oliv.exo.rental.ui.popupmenu.popdessus");
 
 		lblObjet = new Label(infogroupe, SWT.NONE);
 		lblObjet.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 3, 1));
@@ -60,6 +62,7 @@ public class RentalPartView implements RentalUIConstantes {
 		grpDatesDeLocation.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		grpDatesDeLocation.setText("Dates de location");
 		grpDatesDeLocation.setLayout(new GridLayout(2, false));
+		menuService.registerContextMenu(grpDatesDeLocation, "oliv.exo.rental.ui.popupmenu.popdessous");
 
 		Label lblDu = new Label(grpDatesDeLocation, SWT.NONE);
 		lblDu.setText("du :");
