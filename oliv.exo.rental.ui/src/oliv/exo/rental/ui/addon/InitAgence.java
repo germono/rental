@@ -5,12 +5,15 @@ import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.core.runtime.preferences.IScopeContext;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.Address;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
@@ -25,22 +28,9 @@ public class InitAgence  implements RentalUIConstantes{
 	@PostConstruct
 	public void initAgence(IEclipseContext context) {
 		RentalAgency courante = RentalCoreActivator.getAgence();
-		RentalFactory f = RentalFactory.eINSTANCE;
-		 Address ad1 = f.createAddress();
-		    ad1.setNumber(12);
-		    ad1.setStreetType(StreetType.ROAD);
-		    ad1.setStreetName("des bois");
-		    ad1.setZipCode("31400");
-		    ad1.setCity("Toulouse");
-		for (int i = 0; i < 100; i++) {
-			Customer c1 = f.createCustomer();
-		    c1.setFirstName("John");
-		    c1.setLastName("Wayne "+i);
-		    c1.setAddress(ad1);
-		    courante.addCustomer(c1);
-		}
 		context.set(AGENCE_COURANTE, courante);
 		context.set(RENTAL_UI_IMG_REGISTRE, getLocalImageRegistry());
+		context.set("PREF", new ScopedPreferenceStore(InstanceScope.INSTANCE, "oliv.exo.rental.ui"));
 	}
 	
 	
@@ -52,5 +42,6 @@ public class InitAgence  implements RentalUIConstantes{
 //		System.out.println("bob");
 		return reg;
 	}
-
+	
+	
 }

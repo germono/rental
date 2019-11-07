@@ -9,5 +9,19 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   <extension
+         point="com.opcoach.e4.preferences.e4PreferencePages">
+      <page
+            class="oliv.exo.rental.ui.FieldEditorPreferencePageCouleur"
+            id="oliv.exo.rental.ui.page1"
+            name="Rental Couleur">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="oliv.exo.rental.ui.AbstractPreferenceInitializ">
+      </initializer>
+   </extension>
 
 </plugin>

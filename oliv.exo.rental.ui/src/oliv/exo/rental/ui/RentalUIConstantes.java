@@ -10,5 +10,10 @@ public interface RentalUIConstantes {
 	public static final String IMG_AGENCY="icons/Agency.png";
 	public static final String RENTAL_UI_IMG_REGISTRE="oliv.exo.rental.ui.img";
 	
+	String ID_PLUGIN="oliv.exo.rental.ui";
+	String PREF_COLOR_CUSTUMER=ID_PLUGIN+".pref.custumer";
+	String PREF_COLOR_RENTAL=ID_PLUGIN+".pref.rental";
+	String PREF_COLOR_OBJECT=ID_PLUGIN+".pref.object";
+	
 
 }

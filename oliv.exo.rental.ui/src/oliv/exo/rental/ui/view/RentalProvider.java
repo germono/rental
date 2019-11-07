@@ -5,7 +5,10 @@ import java.util.Collection;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -14,6 +17,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -25,6 +29,13 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Inject @Named(RENTAL_UI_IMG_REGISTRE)
 	private ImageRegistry bankImg;
+	
+	
+	private ScopedPreferenceStore pref;
+	@Inject
+	public RentalProvider(@Named("PREF")ScopedPreferenceStore isc) {
+		pref=isc; 
+	}
 	
 	@Override
 	public Object[] getElements(Object inputElement) {
@@ -96,19 +107,30 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 			return label;
 		}
 	}
+	
 	@Override
 	public Color getForeground(Object element) {
 		if(element instanceof RentalAgency) 
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE);
-		if(element instanceof Customer) 
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_CYAN);
+		if(element instanceof Customer) 			
+			return getAColor(pref.getString(PREF_COLOR_CUSTUMER));
 		if(element instanceof Rental) 
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
+			return getAColor(pref.getString(PREF_COLOR_RENTAL));
 		if(element instanceof Node) 
 				return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA);
 		if(element instanceof RentalObject) 
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_YELLOW);
+			return  getAColor(pref.getString(PREF_COLOR_OBJECT));
 		return null;
+	}
+	
+	private Color getAColor(String rgbKey) {
+		ColorRegistry colorRegistry = JFaceResources.getColorRegistry();
+		Color col = colorRegistry.get(rgbKey);
+		if (col==null) {
+			colorRegistry.put(rgbKey, StringConverter.asRGB(rgbKey));
+			col=colorRegistry.get(rgbKey);
+		}
+		return col;
 	}
 
 	@Override
