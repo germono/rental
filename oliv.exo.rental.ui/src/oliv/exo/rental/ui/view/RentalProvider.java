@@ -36,6 +36,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		this.palletteActuel=palletteActuel;
 	}
 	
+	@Inject
 	public RentalProvider(@Named("PaletteActuel")Palette nouvellepalette) {
 		this.palletteActuel=nouvellepalette;
 	}
