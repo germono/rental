@@ -8,9 +8,5 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import com.opcoach.training.rental.Customer;
 
 public class IE {
-	@Evaluate
-	public boolean estVisible(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection) {
-		return selection instanceof Customer;
-	}
-
+	
 }

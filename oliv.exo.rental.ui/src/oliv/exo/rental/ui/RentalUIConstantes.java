@@ -15,5 +15,8 @@ public interface RentalUIConstantes {
 	String PREF_COLOR_RENTAL=ID_PLUGIN+".pref.rental";
 	String PREF_COLOR_OBJECT=ID_PLUGIN+".pref.object";
 	
+	String MESSAGE_RENTAL_CUSTOMER_COPY="rental/customer/COPY";
+	String MESSAGE_RENTAL_OBJECT_COPY="rental/objet/COPY";
+	
 
 }

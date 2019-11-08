@@ -4,21 +4,19 @@ package oliv.exo.rental.ui.addon;
 import java.util.Arrays;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
-import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 import com.opcoach.e4.preferences.ScopedPreferenceStore;
-import com.opcoach.training.rental.Address;
-import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.RentalFactory;
-import com.opcoach.training.rental.StreetType;
 
 import oliv.exo.rebtal.core.RentalCoreActivator;
 import oliv.exo.rental.ui.RentalUIConstantes;
@@ -43,5 +41,10 @@ public class InitAgence  implements RentalUIConstantes{
 		return reg;
 	}
 	
+	@Inject
+	@Optional
+	public void reactMessage(@UIEventTopic("rental/*")String lacopy) {
+		System.out.println("Il y a eu une copy : "+lacopy);
+	}
 	
 }
