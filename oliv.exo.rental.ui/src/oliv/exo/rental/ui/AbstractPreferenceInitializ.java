@@ -20,6 +20,7 @@ public class AbstractPreferenceInitializ extends AbstractPreferenceInitializer i
 			node.put(PREF_COLOR_CUSTUMER, StringConverter.asString(new RGB(0, 0, 100)));
 			node.put(PREF_COLOR_OBJECT, StringConverter.asString(new RGB(0, 100, 0)));
 			node.put(PREF_COLOR_RENTAL, StringConverter.asString(new RGB(100, 0, 0)));
+			node.put("PalettePreference", "oliv.exo.rental.ui.ColorProviderDefault");
 			try {
 				node.flush();
 			} catch (BackingStoreException e) {
@@ -27,6 +28,7 @@ public class AbstractPreferenceInitializ extends AbstractPreferenceInitializer i
 				e.printStackTrace();
 			}
 		}
+		
 	}
 
 }

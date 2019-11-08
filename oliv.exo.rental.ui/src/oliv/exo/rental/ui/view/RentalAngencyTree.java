@@ -8,7 +8,6 @@ import javax.inject.Named;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -20,6 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import com.opcoach.training.rental.RentalAgency;
 
 import oliv.exo.rental.ui.RentalUIConstantes;
+import oliv.exo.rental.ui.addon.Palette;
 
 public class RentalAngencyTree implements RentalUIConstantes{
 
@@ -46,12 +46,21 @@ public class RentalAngencyTree implements RentalUIConstantes{
 		});
 	}
 	
+//	@Inject
+//	//nodePath=ID_PLUGIN, n'est pas obligatoire car deja dans le plugin
+//	public void refreshTree(@Preference(nodePath=ID_PLUGIN,value=PREF_COLOR_CUSTUMER)String custCol,
+//			@Preference(value=PREF_COLOR_RENTAL)String rentCol,
+//			@Preference(value=PREF_COLOR_OBJECT)String objCol) {
+//		if(tv!=null) {
+//			tv.refresh();
+//		}
+//	}
 	@Inject
 	//nodePath=ID_PLUGIN, n'est pas obligatoire car deja dans le plugin
-	public void refreshTree(@Preference(nodePath=ID_PLUGIN,value=PREF_COLOR_CUSTUMER)String custCol,
-			@Preference(value=PREF_COLOR_RENTAL)String rentCol,
-			@Preference(value=PREF_COLOR_OBJECT)String objCol) {
+	public void refreshTree(@Named("PaletteActuel")Palette nouvellepalette) {
+		System.out.println("Mise a jour de l'arbre");
 		if(tv!=null) {
+			rp.setPalette(nouvellepalette);
 			tv.refresh();
 		}
 	}

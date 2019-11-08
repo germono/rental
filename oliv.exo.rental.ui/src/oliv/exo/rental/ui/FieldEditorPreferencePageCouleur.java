@@ -1,7 +1,5 @@
 package oliv.exo.rental.ui;
 
-import java.util.Arrays;
-
 import org.eclipse.jface.preference.ColorFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 

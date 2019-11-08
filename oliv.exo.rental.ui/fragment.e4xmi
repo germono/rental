@@ -15,7 +15,7 @@
         <children xsi:type="menu:HandledToolItem" xmi:id="_aQQuYAFOEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.handledtoolitem.dsfqf" label="dsfqf" command="_n89rwAFKEeqYMofHjJyXVQ"/>
       </toolbar>
     </elements>
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree2">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_THHqEAChEeqWRsLJ-NB0Ug" elementId="oliv.exo.rental.ui.partdescriptor.treeview" label="TreeView" iconURI="platform:/plugin/oliv.exo.rental.ui/icons/Rentals.png" contributionURI="bundleclass://oliv.exo.rental.ui/oliv.exo.rental.ui.view.RentalAngencyTree">
       <tags>View</tags>
       <tags>categoryTag:Debug</tags>
       <menus xmi:id="_1DVsIAFKEeqYMofHjJyXVQ" elementId="oliv.exo.rental.ui.menu.menudeview" label="Menu de view">

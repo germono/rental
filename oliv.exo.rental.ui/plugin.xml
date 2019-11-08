@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="palette" name="palette" schema="schema/palette.exsd"/>
 
    <extension
          id="oliv.exo.rental.ui.fragment"
@@ -16,12 +17,30 @@
             id="oliv.exo.rental.ui.page1"
             name="Rental Couleur">
       </page>
+      <page
+            class="oliv.exo.rental.ui.FieldEditorPreferencePalette"
+            id="oliv.exo.rental.ui.page.palette"
+            name="PalettePreference">
+      </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
             class="oliv.exo.rental.ui.AbstractPreferenceInitializ">
       </initializer>
+   </extension>
+   <extension
+         point="oliv.exo.rental.ui.palette">
+      <palette
+            id="oliv.exo.rental.ui.palette.default"
+            name="Default"
+            paletteClass="oliv.exo.rental.ui.ColorProviderDefault">
+      </palette>
+      <palette
+            id="oliv.exo.rental.ui.palette.fixe"
+            name="Fixe"
+            paletteClass="oliv.exo.rental.ui.ColorProviderFixe">
+      </palette>
    </extension>
 
 </plugin>

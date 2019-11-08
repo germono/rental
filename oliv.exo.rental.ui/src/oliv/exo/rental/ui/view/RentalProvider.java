@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.resource.JFaceResources;
@@ -12,18 +13,16 @@ import org.eclipse.jface.resource.StringConverter;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
 
-import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
 import oliv.exo.rental.ui.RentalUIConstantes;
+import oliv.exo.rental.ui.addon.Palette;
 
 public class RentalProvider extends LabelProvider implements ITreeContentProvider,IColorProvider,RentalUIConstantes{
 
@@ -31,10 +30,14 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	private ImageRegistry bankImg;
 	
 	
-	private ScopedPreferenceStore pref;
-	@Inject
-	public RentalProvider(@Named("PREF")ScopedPreferenceStore isc) {
-		pref=isc; 
+	private Palette palletteActuel;
+	
+	public void setPalette(Palette palletteActuel) {
+		this.palletteActuel=palletteActuel;
+	}
+	
+	public RentalProvider(@Named("PaletteActuel")Palette nouvellepalette) {
+		this.palletteActuel=nouvellepalette;
 	}
 	
 	@Override
@@ -146,17 +149,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	
 	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof RentalAgency) 
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_BLUE);
-		if(element instanceof Customer) 			
-			return getAColor(pref.getString(PREF_COLOR_CUSTUMER));
-		if(element instanceof Rental) 
-			return getAColor(pref.getString(PREF_COLOR_RENTAL));
-		if(element instanceof Node) 
-				return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA);
-		if(element instanceof RentalObject) 
-			return  getAColor(pref.getString(PREF_COLOR_OBJECT));
-		return null;
+		return palletteActuel.getProvider().getForeground(element);
 	}
 	
 	private Color getAColor(String rgbKey) {
@@ -171,8 +164,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 
 	@Override
 	public Color getBackground(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		return palletteActuel.getProvider().getBackground(element);
 		}
 	@Override
 	public Image getImage(Object element) {
