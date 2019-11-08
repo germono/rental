@@ -6,6 +6,8 @@ import java.util.Arrays;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -45,6 +47,18 @@ public class InitAgence  implements RentalUIConstantes{
 	@Optional
 	public void reactMessage(@UIEventTopic("rental/*")String lacopy) {
 		System.out.println("Il y a eu une copy : "+lacopy);
+	}
+	
+	@Inject
+	public void inspectFragment(IExtensionRegistry reg) {
+		for(IConfigurationElement elt : reg.getConfigurationElementsFor("org.eclipse.e4.workbench.model")) {
+			switch (elt.getName()) {
+			case "fragment": System.out.format("Model fragment : %s in %s\n",elt.getAttribute("uri"),elt.getNamespaceIdentifier());break;
+			case "processor": System.out.format("Model processor : %s in %s\n",elt.getAttribute("class"),elt.getNamespaceIdentifier());break;
+			default : System.out.format("Model autre : %s in %s\n",elt.getName(),elt.getNamespaceIdentifier());
+			}
+		}
+		
 	}
 	
 }

@@ -1,6 +1,5 @@
 package oliv.exo.rental.ui.view;
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import javax.annotation.PostConstruct;
