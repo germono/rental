@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="oliv.exo.chapeau">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/oliv.exo.chapeau/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="oliv.exo.chapeau">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="oliv.exo.chapeau.intro">
+      </intro>
+      <introProductBinding
+            introId="oliv.exo.chapeau.intro"
+            productId="oliv.exo.chapeau.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="introContent.xml"
+            id="oliv.exo.chapeau.introConfigId"
+            introId="oliv.exo.chapeau.intro">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx"
+                  style="content/shared.css">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+
+</plugin>

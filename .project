@@ -10,12 +10,12 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1573225716922</id>
+			<id>1573227507067</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-true-oliv.exo.rental.*</arguments>
+				<arguments>1.0-name-matches-false-true-oliv.exo.*</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

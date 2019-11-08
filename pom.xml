@@ -32,8 +32,8 @@
 						</dependency-resolution> -->
 					<target>
 						<artifact>
-							<groupId>oliv.exo.rental.tp</groupId>
-							<artifactId>${targetArtifact}</artifactId>
+							<groupId>oliv.exo.rental</groupId>
+							<artifactId>oliv.exo.rental.tp</artifactId>
 							<version>4.13.0-SNAPSHOT</version>
 						</artifact>
 					</target>
@@ -64,6 +64,10 @@
 	<!-- the modules that should be built together -->
 	<modules>
 		<module>oliv.exo.rental.tp</module>
-		
+		<module>oliv.exo.rental.core</module>
+		<module>oliv.exo.rental.ui</module>
+		<module>oliv.exo.rental.feature</module>
+		<module>oliv.exo.chapeau</module>
+		<module>oliv.exo.rental.repository</module>
 	</modules>
 </project>

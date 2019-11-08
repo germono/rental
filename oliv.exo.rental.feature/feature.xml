@@ -16,11 +16,13 @@
       [Enter License Description here.]
    </license>
 
+   <includes
+         id="com.opcoach.e4.preferences.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.eclipse.ui" version="3.114.0" match="greaterOrEqual"/>
-      <import plugin="oliv.exo.rental.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.e4.ui.di"/>
       <import plugin="org.eclipse.e4.ui.model.workbench" version="2.1.500.v20190824-1021" match="greaterOrEqual"/>
@@ -35,6 +37,7 @@
       <import plugin="javax.inject"/>
       <import plugin="javax.annotation"/>
       <import plugin="org.eclipse.swt"/>
+      <import plugin="oliv.exo.rental.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="com.opcoach.e4.preferences.mainmenu" version="1.2.0" match="greaterOrEqual"/>
    </requires>
 
@@ -43,14 +46,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="oliv.exo.rental.ui.e3"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
          unpack="false"/>
 
    <plugin
@@ -65,14 +60,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="oliv.exo.rental.ui.fr"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
          unpack="false"/>
 
 </feature>

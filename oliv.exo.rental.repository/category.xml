@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="oliv.exo.rental.feature">
+      <category name="exo.rental"/>
+   </feature>
+   <category-def name="exo.rental" label="Rental"/>
+</site>
